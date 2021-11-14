@@ -1,5 +1,10 @@
+const fs = require ('fs');
+const trips =JSON.parse( fs.readFileSync('./data/trips.json','utf8'));
+
+
 const travel = ( req, res)=>{
-    res.render('travel', {title:'Traveler Gatewayss'});
+    pageTitle = process.env.npm_package_description + 'Travel' ;
+    res.render('travel', {title:'Traveler Gatewayss', trips});
 
 };
 module.exports ={
